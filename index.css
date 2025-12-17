@@ -1,0 +1,125 @@
+/* Reset default HTML Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+
+:root {
+    --primary-white: #f3f3f3;
+    --primary-grey: ;
+    --accent-color: ;
+
+    --brown: #734D2C ;
+    --nightgreen: #203033;
+    --blue: #2C6673;
+    --sand: #C8A98E;
+    --skyblue: #D5EDF2;
+}
+
+body {
+    /* Background Color */
+    min-height: 100vh;
+    margin: 0;
+
+    background: linear-gradient(135deg, #3B899A 0%, #A47451 50%, #000116 100%);
+    background-attachment: fixed;
+
+    /* Global Font */
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Supports 100-900 */
+    font-style: normal;
+    font-variation-settings: "width" 100;
+    color: var(--primary-white);
+}
+
+.content {
+    margin: 2em;
+}
+
+.hstack {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-content: center;
+
+    margin: 3em 0em;
+}
+
+.card {
+    background: color-mix(in srgb, var(--nightgreen), transparent 75%);
+    border-radius: 0.5em;
+    margin: 0.8em 0;
+    padding: 1.3em;
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* make it into a circle */
+
+    /* Protect aspect ratio */
+    object-fit: cover;
+
+    box-shadow:
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 10px 15px -3px rgba(0, 0, 0, 0.2),
+            0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+    border: 3px solid white;
+}
+
+h1 {
+    font-weight: 600;
+    margin: 1em 0 0.2em 0;
+}
+
+h2 {
+    font-weight: 500;
+    margin: 0 0 0.2em 0;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 1em;
+}
+
+h4 {
+    font-weight: 400;
+}
+
+p {
+    font-weight: 200;
+    text-align: justify;
+}
+
+.primary-button {
+    background: var(--blue);
+    color: var(--primary-white);
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    margin: 0 1em;
+}
+
+.elevator-pitch {
+    margin: 2em 0 0.5em 0;
+}
+
+.category-selector {
+    display: flex;
+    flex-direction: row;
+    gap: 1.4em;
+}
+
