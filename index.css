@@ -15,6 +15,12 @@ button {
     outline: inherit;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+}
 
 :root {
     --primary-white: #f3f3f3;
@@ -33,7 +39,7 @@ body {
     min-height: 100vh;
     margin: 0;
 
-    background: linear-gradient(135deg, #3B899A 0%, #A47451 50%, #000116 100%);
+    background: linear-gradient(160deg, #3B899A 0%, #A47451 80%, #000116 100%);
     background-attachment: fixed;
 
     /* Global Font */
@@ -59,10 +65,37 @@ body {
 }
 
 .card {
-    background: color-mix(in srgb, var(--nightgreen), transparent 75%);
-    border-radius: 0.5em;
+    /* 1. Transparenter Hintergrund (Nutze color-mix oder direktes rgba) */
+    background: color-mix(in srgb, var(--nightgreen), transparent 65%);
+
+    /* 2. Weichzeichner für den Hintergrund */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* jSafari Support */
+
+    /* 3. Ein feiner weißer Rand (wirkt wie eine Lichtkante am Glas) */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* 4. Abrunden und Schatten für die Tiefe */
+    border-radius: 1em;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
     margin: 0.8em 0;
     padding: 1.3em;
+    padding-top: 0.8em;
+}
+
+.card a {
+    display: inline-block;
+    color: var(--accent-color);
+    position: relative;
+    font-weight: 500;
+    margin-top: 0.7em;
+}
+
+.card a:hover {
+    /* small line */
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 1px;
 }
 
 .profile-img {
@@ -103,6 +136,18 @@ h4 {
 p {
     font-weight: 200;
     text-align: justify;
+}
+
+.material-symbols-outlined {
+    /* Richtet das Icon vertikal zur Mitte des Textes aus */
+    vertical-align: middle;
+
+    /* Optional: Ein winziger Abstand zum Text links */
+    margin-left: 1px;
+
+    /* Falls du das Icon dicker oder dünner willst,
+       nutzt du einfach font-variation-settings */
+    font-variation-settings: 'wght' 400;
 }
 
 .primary-button {
