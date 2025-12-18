@@ -55,6 +55,60 @@ body {
     margin: 2em;
 }
 
+nav {
+    /* Stick to top */
+    position: sticky;
+    top: 1em;
+    z-index: 1000;
+    margin-top: 2em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+
+
+    /* Liquid Glass Effect */
+    background: color-mix(in srgb, var(--blue), transparent 65%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* jSafari Support */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1em;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    margin: 0.8em 0;
+}
+
+nav li {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+nav li:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav li a {
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--primary-white);
+    opacity: 0.8;
+    padding: 0.8em 1.2em;
+    transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+}
+
+
+nav ul li:hover a {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
 .hstack {
     display: flex;
     flex-direction: row;
@@ -99,8 +153,8 @@ body {
 }
 
 .profile-img {
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%; /* make it into a circle */
 
     /* Protect aspect ratio */
@@ -115,8 +169,9 @@ body {
 }
 
 h1 {
-    font-weight: 600;
-    margin: 1em 0 0.2em 0;
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 1.5em 0 0.2em 0;
 }
 
 h2 {
@@ -130,7 +185,8 @@ h3 {
 }
 
 h4 {
-    font-weight: 400;
+    font-weight: 600;
+    font-size: 0.8rem;
 }
 
 p {
@@ -138,15 +194,14 @@ p {
     text-align: justify;
 }
 
+
+/* TODO: Mit flexbox einmitten, nicht mit margin! */
+.name-title {
+    margin: 2em 0 0 0;
+}
 .material-symbols-outlined {
-    /* Richtet das Icon vertikal zur Mitte des Textes aus */
     vertical-align: middle;
-
-    /* Optional: Ein winziger Abstand zum Text links */
     margin-left: 1px;
-
-    /* Falls du das Icon dicker oder dünner willst,
-       nutzt du einfach font-variation-settings */
     font-variation-settings: 'wght' 400;
 }
 
