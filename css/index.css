@@ -57,11 +57,11 @@ body {
     color: var(--primary-white);
 }
 
-.content {
+main {
     margin: 1em;
 }
 
-nav {
+header {
     /* Stick to top */
     position: sticky;
     top: 0.6em;
@@ -113,7 +113,10 @@ nav li a {
     color: var(--primary-white);
     opacity: 0.8;
     padding: 0.8em 0.4em;
-    transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+    transition:
+            transform 0.3s ease,
+            color 0.3s ease,
+            opacity 0.3s ease;
 }
 
 
@@ -133,7 +136,9 @@ nav ul li:hover a {
 
 .card {
     /* 1. Transparenter Hintergrund (Nutze color-mix oder direktes rgba) */
-    background: color-mix(in srgb, var(--nightgreen), transparent 65%);
+    background: color-mix(
+            in srgb, var(--nightgreen), transparent 65%
+    );
 
     /* 2. Weichzeichner für den Hintergrund */
     backdrop-filter: blur(12px);
