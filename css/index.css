@@ -22,6 +22,7 @@ a {
     outline: none;
 }
 
+/* General Setup */
 :root {
     --primary-white: #f3f3f3;
     --primary-grey: ;
@@ -35,38 +36,38 @@ a {
 }
 
 body {
-    /* Background Color */
     min-height: 100vh;
     margin: 0;
-
     background-color: #000116;
     background-image: linear-gradient(160deg,
     rgba(59, 137, 154, 1) 0%,
     rgba(164, 116, 81, 0.4) 85%,
     rgba(0, 1, 22, 0.8) 100%
     );
-
     background-attachment: fixed;
-
-    /* Global Font */
     font-family: "Noto Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400; /* Supports 100-900 */
-    font-style: normal;
-    font-variation-settings: "width" 100;
     color: var(--primary-white);
+    line-height: 1.6;
 }
+
+/* Typography System Mobile*/
+h1 { font-size: 1.6rem; font-weight: 800; margin: 1.5rem 0 0.5rem 0; }
+h2 { font-size: 1.3rem; font-weight: 700; margin-top: 0.2rem; }
+h3 { font-size: 1.1rem; font-weight: 600; }
+h4 { font-size: 0.8rem; font-weight: 500; opacity: 0.8; text-transform: uppercase; }
+p { font-size: 0.95rem; font-weight: 300; margin-bottom: 1rem; text-align: justify; }
 
 main {
-    margin: 1em;
+    margin: 1rem;
 }
 
+/* Header and Nav on Mobile */
 header {
     /* Stick to top */
     position: sticky;
-    top: 0.6em;
+    top: 2em;
     z-index: 1000;
-    margin-top: 2em;
+    margin: 2em 1em;
 }
 
 nav ul {
@@ -125,13 +126,45 @@ nav ul li:hover a {
     opacity: 1;
 }
 
-.hstack {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-content: center;
+.hero {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 0.7fr 1.3fr;
+    margin: 3rem 0 2rem 0;
+}
 
-    margin: 3em 0;
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%; /* make it into a circle */
+
+    /* Protect aspect ratio */
+    object-fit: cover;
+
+    box-shadow:
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 10px 15px -3px rgba(0, 0, 0, 0.2),
+            0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+    border: 3px solid white;
+
+    margin: 1rem;
+}
+
+.hero-text {
+}
+
+.hero-text h1 {
+    margin: 0;
+}
+
+.hero p{
+    margin: 0 1em 8em 0;
+    text-align: justify;
+}
+
+.elevator-pitch {
+    margin: 0.4em 1em;
 }
 
 .card {
@@ -161,7 +194,6 @@ nav ul li:hover a {
     color: var(--accent-color);
     position: relative;
     font-weight: 500;
-    margin-top: 0.7em;
 }
 
 .card a:hover {
@@ -170,53 +202,8 @@ nav ul li:hover a {
     padding-bottom: 1px;
 }
 
-.profile-img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%; /* make it into a circle */
-
-    /* Protect aspect ratio */
-    object-fit: cover;
-
-    box-shadow:
-            0 4px 6px -1px rgba(0, 0, 0, 0.1),
-            0 10px 15px -3px rgba(0, 0, 0, 0.2),
-            0 20px 25px -5px rgba(0, 0, 0, 0.1);
-
-    border: 3px solid white;
-}
-
-h1 {
-    font-weight: 800;
-    font-size: 1.5rem;
-    margin: 1.5em 0 0.2em 0;
-}
-
-h2 {
-    font-weight: 500;
-    margin: 0 0 0.2em 0;
-}
-
-h3 {
-    font-weight: 400;
-    font-size: 1em;
-}
-
-h4 {
-    font-weight: 600;
-    font-size: 0.8rem;
-}
-
-p {
-    font-weight: 200;
-    text-align: justify;
-}
-
 
 /* TODO: Mit flexbox einmitten, nicht mit margin! */
-.name-title {
-    margin: 2em 0 0 0;
-}
 .material-symbols-outlined {
     vertical-align: middle;
     margin-left: 1px;
@@ -231,13 +218,54 @@ p {
     margin: 0 1em;
 }
 
-.elevator-pitch {
-    margin: 2em 0 0.5em 0;
-}
-
 .category-selector {
     display: flex;
     flex-direction: row;
     gap: 1.4em;
+}
+
+footer {
+    background: color(var(--nightgreen), 0.2);
+    border-radius: 1em 1em 0 0;
+    padding: 1em;
+}
+
+footer > * {
+}
+
+/* --- RESPONSIVE DESIGN: Adjust for Desktop (>=1024px) --- */
+@media (min-width: 1024px) {
+    .content {
+        max-width: 1000px; /* Zentriert den Content [cite: 11] */
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    /* Typography Desktop */
+    h1 { font-size: 2.5rem; margin-top: 3rem; }
+    h2 { font-size: 1.8rem; }
+    p { font-size: 1.1rem; }
+
+    /* Profile Header Desktop */
+    .hstack {
+        gap: 2rem;
+        margin: 4rem 0;
+    }
+
+    .profile-img {
+        width: 160px;
+        height: 160px;
+        border: 4px solid white;
+    }
+
+    /* Navigation Desktop */
+    nav li a {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    header {
+        top: 1.5rem;
+    }
 }
 
