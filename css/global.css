@@ -35,6 +35,10 @@ a {
     --blue: #2C6673;
     --sand: #C8A98E;
     --skyblue: #D5EDF2;
+
+    /* Form Validation Colors */
+    --valid-green: #88A65E;
+    --error-red: #B35442;
 }
 
 body {

@@ -49,10 +49,10 @@ $(document).ready(function () {
         // Email
         if (this.id === 'email') {
             if ($(this).val().length == '') {
-                setErrorClass($(this), "Email darf nicht leer sein");
+                setErrorClass($(this), "E-Mail darf nicht leer sein");
                 emailError = true;
             } else if (!regex.test($(this).val())) {
-                setErrorClass($(this), "Keine gültige Email");
+                setErrorClass($(this), "Keine gültige E-Mail");
                 emailError = true;
             } else {
                 setSuccessClass($(this));
@@ -62,14 +62,20 @@ $(document).ready(function () {
 
         // Phone
         if (this.id === 'phone') {
-            if ($(this).val().length != '') {
+            if ($(this).val().length > 0 && $(this).val().length < 7) {
+                setErrorClass($(this), "Mindestlänge 7 Zeichen");
+                phoneError = true;
+            } else {
                 setSuccessClass($(this));
+                console.log($(this).val())
+                console.log(Number.isInteger($(this).val()))
+                phoneError = false;
             }
         }
 
         // Message
         if (this.id === 'message') {
-            if ($(this).val().length != '') {
+            if ($(this).val().length === 0) {
                 setErrorClass($(this), "Nachricht darf nicht leer sein");
                 messageError = true;
             } else {

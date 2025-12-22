@@ -4,6 +4,10 @@ img {
 }
 
 /* FORM */
+.form-group {
+    position: relative;
+    margin-bottom: 1.7rem;
+}
 input, textarea, button {
     outline: none; /* remove default html syling */
     width: 100%;
@@ -38,9 +42,18 @@ textarea:focus {
 }
 
 .hasSuccess {
-    border: 2px solid ;
+    border: 1px solid var(--valid-green);
 }
 
 .hasError {
-    border: 2px solid rgba(255, 0, 0, 0.4);
+    border: 1px solid var(--error-red);
+}
+
+span.error {
+    position: absolute;
+    left: 1rem;
+    bottom: -1.2rem;
+    color: var(--error-red);
+    white-space: nowrap;
+    font-weight: 600;
 }
