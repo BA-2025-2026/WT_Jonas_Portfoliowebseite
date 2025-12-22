@@ -8,6 +8,7 @@ $(document).ready(function () {
 
     // Email Regex Pattern
     const regex = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
+    const nameRegex = /\d/;
 
     // Form validation
     $('input, textarea').blur(function () {
@@ -21,6 +22,9 @@ $(document).ready(function () {
                 firstNameError = true;
             } else if ($(this).val().length > 0 && $(this).val().length < 2) {
                 setErrorClass($(this), "Mindestlänge 2 Zeichen");
+                firstNameError = true;
+            } else if (nameRegex.test($(this).val())) {
+                setErrorClass($(this), "Zahlen sind nicht erlaubt");
                 firstNameError = true;
             } else {
                 setSuccessClass($(this));
@@ -37,6 +41,9 @@ $(document).ready(function () {
                 lastNameError = true;
             } else if ($(this).val().length > 0 && $(this).val().length < 2) {
                 setErrorClass($(this), "Mindestlänge 2 Zeichen");
+                lastNameError = true;
+            } else if (nameRegex.test($(this).val())) {
+                setErrorClass($(this), "Zahlen sind nicht erlaubt");
                 lastNameError = true;
             } else {
                 setSuccessClass($(this));
