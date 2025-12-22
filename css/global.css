@@ -31,7 +31,7 @@ a {
 
     --brown: #734D2C ;
     --nightgreen: #203033;
-    --nightgreen-rgb: 59, 137, 154;
+    --nightgreen-rgb: 32, 48, 51;
     --blue: #2C6673;
     --sand: #C8A98E;
     --skyblue: #D5EDF2;
@@ -81,7 +81,7 @@ main {
 header {
     /* Stick to top */
     position: sticky;
-    top: 2em;
+    top: 1em;
     z-index: 1000;
     margin: 1em 1em;
 }
@@ -228,7 +228,7 @@ nav ul li:hover a {
 }
 
 .cta a {
-    margin: 1.2rem 3rem;
+    margin: 2rem 3rem 0.5rem 3rem;
     padding: 0.7rem 2rem;
 }
 
@@ -241,16 +241,14 @@ nav ul li:hover a {
 .primary-button {
     background: var(--blue);
     color: var(--primary-white);
-    padding: 0.5em 1em;
     border-radius: 0.5em;
-    margin: 0 1em;
 }
 
 
 
 /* --- FOOTER --- */
 footer {
-    background: rgba(var(--nightgreen-rgb), 0.4);
+    background: rgba(var(--nightgreen-rgb), 0.6);
     border-radius: 1em 1em 0 0;
     padding: 1em;
     margin: 3rem 0 0 0;
@@ -264,17 +262,23 @@ footer p {
     margin: 0;
 }
 
+footer .tel-mail {
+    margin: 0.5rem 0;
+}
+
 .footer-nav {
     display: flex;
-    margin: 2rem 0 0 0;
+    margin: 2rem 0 1rem 0;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .footer-nav a {
     display: inline-block;
     cursor: pointer;
 }
+
+
 
 /* --- RESPONSIVE DESIGN: Adjust for Desktop (>=1024px) --- */
 @media (min-width: 1024px) {

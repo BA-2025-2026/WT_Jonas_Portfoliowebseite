@@ -1,0 +1,8 @@
+.privacy-policy h3 {
+    margin-top: 1.3rem;
+}
+.privacy-policy ul li, .responsible-person {
+    margin-left: 1.5rem;
+    font-weight: 300;
+    font-size: 0.95rem;
+}

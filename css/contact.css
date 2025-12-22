@@ -3,11 +3,22 @@ img {
     margin: 0 1rem;
 }
 
+/* SOCIAL LINKS */
+.social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.social-links a {
+    margin: 1.5rem 0 1rem 0;
+}
 /* FORM */
 .form-group {
     position: relative;
     margin-bottom: 1.7rem;
 }
+
 input, textarea, button {
     outline: none; /* remove default html syling */
     width: 100%;
