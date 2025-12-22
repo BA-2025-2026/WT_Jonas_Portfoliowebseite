@@ -61,7 +61,17 @@ h1 { font-size: 1.6rem; font-weight: 800; margin: 2rem 0 0.5rem 0; }
 h2 { font-size: 1.3rem; font-weight: 700; margin: 2rem 0 1rem 0; }
 h3 { font-size: 1.1rem; font-weight: 600; }
 h4 { font-size: 0.8rem; font-weight: 500; opacity: 0.8; text-transform: uppercase; }
-p { font-size: 0.95rem; font-weight: 300; margin-bottom: 0.3rem; text-align: justify; }
+p {
+    font-size: 0.95rem;
+    font-weight: 300;
+    margin-bottom: 0.3rem;
+    text-align: justify;
+
+    -webkit-hyphens: auto; /* Safari */
+    hyphens: auto;
+
+    overflow-wrap: break-word;
+}
 
 main {
     margin: 1rem;
@@ -133,7 +143,8 @@ nav ul li:hover a {
 }
 
 .card {
-    /* 1. Transparenter Hintergrund (Nutze color-mix oder direktes rgba) */
+    position: relative;
+    /* 1. Transparenter Hintergrund */
     background: color-mix(
             in srgb, var(--nightgreen), transparent 65%
     );
@@ -148,13 +159,44 @@ nav ul li:hover a {
     /* 4. Abrunden und Schatten für die Tiefe */
     border-radius: 1em;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 
     margin: 0.8em 0;
-    padding: 1.3em;
-    padding-top: 0.8em;
+}
+
+.card .project-image {
+    max-width: 100%;
+    min-width: 100%;
+    height: 100px;
+
+    object-fit: cover;
+    object-position: top;
+}
+
+.card .technology-image {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+
+    width: 40px;
+    height: auto;
+
+    margin: 0;
+    z-index: 100;
+    opacity: 0.4;
+
+}
+
+.card h2 {
+    margin: 0.2rem 0.7rem 0.4rem 0.7rem;
+}
+
+.card p {
+    margin: 0 1rem 0.4rem 0.7rem
 }
 
 .card a {
+    margin: 1rem 6rem 0.7rem 0.7rem;
     display: inline-block;
     color: var(--accent-color);
     position: relative;
@@ -179,6 +221,31 @@ nav ul li:hover a {
     white-space: nowrap;
     border-width: 0;
 }
+
+.cta {
+    display: flex;
+    flex-direction: column;
+}
+
+.cta a {
+    margin: 1.2rem 3rem;
+    padding: 0.7rem 2rem;
+}
+
+.material-symbols-outlined {
+    vertical-align: middle;
+    margin-left: 1px;
+    font-variation-settings: 'wght' 400;
+}
+
+.primary-button {
+    background: var(--blue);
+    color: var(--primary-white);
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    margin: 0 1em;
+}
+
 
 
 /* --- FOOTER --- */

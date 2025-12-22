@@ -24,14 +24,11 @@
     margin: 1rem;
 }
 
-.hero-text {
-}
-
 .hero-text h1 {
     margin: 0;
 }
 
-.hero p{
+.hero p {
     margin: 0 1em 8em 0;
     text-align: justify;
 }
@@ -40,19 +37,7 @@
     margin: 0.4em 1em;
 }
 
-.material-symbols-outlined {
-    vertical-align: middle;
-    margin-left: 1px;
-    font-variation-settings: 'wght' 400;
-}
 
-.primary-button {
-    background: var(--blue);
-    color: var(--primary-white);
-    padding: 0.5em 1em;
-    border-radius: 0.5em;
-    margin: 0 1em;
-}
 
 
 /* --- RESPONSIVE DESIGN: Adjust for Desktop (>=1024px) --- */

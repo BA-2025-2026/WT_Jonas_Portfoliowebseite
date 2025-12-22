@@ -1,0 +1,24 @@
+img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%; /* make it into a circle */
+
+    /* Protect aspect ratio */
+    object-fit: cover;
+
+    box-shadow:
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 10px 15px -3px rgba(0, 0, 0, 0.2),
+            0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+    border: 3px solid white;
+
+    margin: 1rem 0 2rem 0;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
