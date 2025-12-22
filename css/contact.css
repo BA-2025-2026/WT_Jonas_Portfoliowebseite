@@ -1,0 +1,46 @@
+img {
+    width: 50px;
+    margin: 0 1rem;
+}
+
+/* FORM */
+input, textarea, button {
+    outline: none; /* remove default html syling */
+    width: 100%;
+    margin: 0 0 0.8em 0;
+    padding: 0.7em 1.2em;
+
+    font-family: "Noto Sans", sans-serif;
+    font-size: 0.95rem;
+    color: var(--primary-white);
+    line-height: 1.6;
+
+    background: color-mix(
+            in srgb, var(--nightgreen), transparent 65%
+    );
+
+    /* 2. Weichzeichner für den Hintergrund */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* jSafari Support */
+
+    /* 3. Ein feiner weißer Rand (wirkt wie eine Lichtkante am Glas) */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* 4. Abrunden und Schatten für die Tiefe */
+    border-radius: 1em;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+input:focus,
+textarea:focus {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.hasSuccess {
+    border: 2px solid ;
+}
+
+.hasError {
+    border: 2px solid rgba(255, 0, 0, 0.4);
+}

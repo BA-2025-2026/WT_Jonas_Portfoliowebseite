@@ -1,0 +1,225 @@
+/* Reset default HTML Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+/* --- 1. GLOBAL STYLES (Valid for all subpages) --- */
+/* General Setup */
+:root {
+    --primary-white: #f3f3f3;
+    --primary-grey: ;
+    --accent-color: ;
+
+    --brown: #734D2C ;
+    --nightgreen: #203033;
+    --nightgreen-rgb: 59, 137, 154;
+    --blue: #2C6673;
+    --sand: #C8A98E;
+    --skyblue: #D5EDF2;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-color: #000116;
+    background-image: linear-gradient(160deg,
+    rgba(59, 137, 154, 1) 0%,
+    rgba(164, 116, 81, 0.4) 85%,
+    rgba(0, 1, 22, 0.8) 100%
+    );
+    background-attachment: fixed;
+    font-family: "Noto Sans", sans-serif;
+    color: var(--primary-white);
+    line-height: 1.6;
+}
+
+/* Typography System Mobile*/
+h1 { font-size: 1.6rem; font-weight: 800; margin: 2rem 0 0.5rem 0; }
+h2 { font-size: 1.3rem; font-weight: 700; margin: 2rem 0 1rem 0; }
+h3 { font-size: 1.1rem; font-weight: 600; }
+h4 { font-size: 0.8rem; font-weight: 500; opacity: 0.8; text-transform: uppercase; }
+p { font-size: 0.95rem; font-weight: 300; margin-bottom: 0.3rem; text-align: justify; }
+
+main {
+    margin: 1rem;
+}
+
+/* --- NAV --- */
+header {
+    /* Stick to top */
+    position: sticky;
+    top: 2em;
+    z-index: 1000;
+    margin: 1em 1em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+
+
+    /* Liquid Glass Effect */
+    background: color-mix(in srgb, var(--blue), transparent 65%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* jSafari Support */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1em;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    margin: 0.8em 0;
+}
+
+nav li {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+nav li:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: var(--primary-white);
+    opacity: 0.8;
+    padding: 0.8em 0.4em;
+    transition:
+            transform 0.3s ease,
+            color 0.3s ease,
+            opacity 0.3s ease;
+}
+
+
+nav ul li:hover a {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.card {
+    /* 1. Transparenter Hintergrund (Nutze color-mix oder direktes rgba) */
+    background: color-mix(
+            in srgb, var(--nightgreen), transparent 65%
+    );
+
+    /* 2. Weichzeichner für den Hintergrund */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* jSafari Support */
+
+    /* 3. Ein feiner weißer Rand (wirkt wie eine Lichtkante am Glas) */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* 4. Abrunden und Schatten für die Tiefe */
+    border-radius: 1em;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    margin: 0.8em 0;
+    padding: 1.3em;
+    padding-top: 0.8em;
+}
+
+.card a {
+    display: inline-block;
+    color: var(--accent-color);
+    position: relative;
+    font-weight: 500;
+}
+
+.card a:hover {
+    /* small line */
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 1px;
+}
+
+/* Screenreader only (Accessibility) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+
+/* --- FOOTER --- */
+footer {
+    background: rgba(var(--nightgreen-rgb), 0.4);
+    border-radius: 1em 1em 0 0;
+    padding: 1em;
+    margin: 3rem 0 0 0;
+}
+
+.footer-title {
+    margin-bottom: 1rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+.footer-nav {
+    display: flex;
+    margin: 2rem 0 0 0;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-nav a {
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* --- RESPONSIVE DESIGN: Adjust for Desktop (>=1024px) --- */
+@media (min-width: 1024px) {
+
+    /* Typography Desktop */
+    h1 {
+        font-size: 2.5rem;
+        margin-top: 3rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+
+}
