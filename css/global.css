@@ -205,12 +205,12 @@ nav ul li:hover a {
     color: var(--accent-color);
     position: relative;
     font-weight: 500;
+    border: 2px solid transparent;
+    transition: border-bottom-color 0.3s ease;
 }
 
 .card a:hover {
-    /* small line */
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 1px;
+    border-bottom-color: rgba(var(--accent-color), 0.2);
 }
 
 /* Screenreader only (Accessibility) */
@@ -243,7 +243,6 @@ nav ul li:hover a {
 
 .material-symbols-outlined {
     vertical-align: middle;
-    margin-left: 1px;
     font-variation-settings: 'wght' 400;
 }
 
@@ -328,6 +327,10 @@ footer .tel-mail {
         grid-template-columns: 1fr 1fr;
         gap: 20px;
         grid-row-gap: 0;
+    }
+
+    .project-description {
+        padding: 0.8rem;
     }
 
     .card .project-image {
