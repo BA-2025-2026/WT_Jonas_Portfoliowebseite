@@ -7,7 +7,7 @@ $(document).ready(function () {
         messageError= true
 
     // Email Regex Pattern
-    const regex = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
     const nameRegex = /\d/;
 
     // Form validation
@@ -58,7 +58,7 @@ $(document).ready(function () {
             if ($(this).val().length == '') {
                 setErrorClass($(this), "E-Mail darf nicht leer sein");
                 emailError = true;
-            } else if (!regex.test($(this).val())) {
+            } else if (!emailRegex.test($(this).val())) {
                 setErrorClass($(this), "Keine gültige E-Mail");
                 emailError = true;
             } else {
