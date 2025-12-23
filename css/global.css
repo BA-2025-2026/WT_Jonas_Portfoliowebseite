@@ -191,6 +191,10 @@ nav ul li:hover a {
     margin: 0.2rem 0.7rem 0.4rem 0.7rem;
 }
 
+.card h3 {
+    margin-left: 0.7rem;
+}
+
 .card p {
     margin: 0 1rem 0.4rem 0.7rem
 }
@@ -228,8 +232,13 @@ nav ul li:hover a {
 }
 
 .cta a {
-    margin: 2rem 3rem 0.5rem 3rem;
-    padding: 0.7rem 2rem;
+    margin: 2rem auto 0.5rem auto;
+    padding: 0.7rem 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 600px;
 }
 
 .material-symbols-outlined {
@@ -283,6 +292,21 @@ footer .tel-mail {
 /* --- RESPONSIVE DESIGN: Adjust for Desktop (>=1024px) --- */
 @media (min-width: 1024px) {
 
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+
+        max-width: calc(1024px + 4rem);
+        margin: 0 auto;
+        padding: 4rem 4rem 0 4rem;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    main {
+        flex: 1;
+    }
+
     /* Typography Desktop */
     h1 {
         font-size: 2.5rem;
@@ -295,6 +319,23 @@ footer .tel-mail {
 
     p {
         font-size: 1.1rem;
+    }
+
+
+    /* PROJECT CARDS */
+    .project-card-area {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        grid-row-gap: 0;
+    }
+
+    .card .project-image {
+        height: 180px;
+    }
+
+    footer {
+        padding: 3rem 3rem 0 3rem;
     }
 
 }

@@ -68,3 +68,23 @@ span.error {
     white-space: nowrap;
     font-weight: 600;
 }
+
+/* --- RESPONSIVE DESIGN: Adjust for Desktop (>=1024px) --- */
+@media (min-width: 1024px) {
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        grid-row-gap: 0;
+    }
+
+    form .form-message {
+        grid-column: span 2;
+    }
+
+    form button {
+        grid-column: span 2;
+        margin: 0 auto;
+        max-width: 300px;
+    }
+}

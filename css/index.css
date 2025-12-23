@@ -44,9 +44,10 @@
 @media (min-width: 1024px) {
 
     /* Profile Header Desktop */
-    .hstack {
-        gap: 2rem;
-        margin: 4rem 0;
+    .hero {
+        display: flex;
+        margin: 6rem auto 3rem auto;
+        gap: 30px;
     }
 
     .profile-img {
